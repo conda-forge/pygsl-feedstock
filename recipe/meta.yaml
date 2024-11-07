@@ -26,6 +26,7 @@ requirements:
     - setuptools
     - wheel
     - numpy >2.0  # [py>=313]
+    - numpy
     - pip
     - gsl
   run:
