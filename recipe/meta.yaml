@@ -25,13 +25,15 @@ requirements:
     - libcblas
     - setuptools
     - wheel
-    - numpy >=2.0    # [py>=313]
-    - numpy <2.0     # [py<313]
+    - numpy >=2.0  # [py>=313]
+    - numpy <2.0   # [py<3.13]
     - pip
+    - gsl
   run:
     - python
-    - numpy >=2.0    # [py>=313]
-    - numpy <2.0     # [py<313]
+    - gsl
+    - numpy >=2.0  # [py>=313]
+    - numpy <2.0   # [py<313]
 
 test:
   imports:
