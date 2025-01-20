@@ -1,5 +1,5 @@
 {% set name = "pygsl" %}
-{% set version = "2.3.4" %}
+{% set version = "2.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/pygsl/pygsl/archive/refs/tags/v.{{ version }}.tar.gz
-  sha256: 9617c70ba63a0f936d44fecb2f779c46da7ac9c5793524f71eb483bb5ec01931
+  sha256: a6935cfbdd1ee7d23858ec1a38d33928f643718299e7dca18bb158cdd596eb57
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
