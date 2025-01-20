@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/pygsl/pygsl/archive/refs/tags/v.{{ version }}.tar.gz
+  url: https://github.com/pygsl/pygsl/releases/download/v{{ version }}/pygsl-{{ version }}.tar.gz
   sha256: a6935cfbdd1ee7d23858ec1a38d33928f643718299e7dca18bb158cdd596eb57
 
 build:
