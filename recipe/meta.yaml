@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
   skip: true  # [win or py<38]
 
 requirements:
@@ -25,13 +25,13 @@ requirements:
     - libcblas
     - setuptools
     - wheel
-    - numpy
+    - numpy <2.0dev0
     - pip
     - gsl
   run:
     - python
     - gsl
-    - numpy
+    - numpy <2.0dev0
 
 test:
   imports:
