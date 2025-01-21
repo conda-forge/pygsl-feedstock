@@ -1,17 +1,10 @@
 c_compiler:
+  - clang       # [osx]
   - gcc         # [linux]
-  - clang       # [osx]
-  - vs2019      # [win]
-cxx_compiler:
-  - gxx         # [linux]
-  - clangxx     # [osx]
-  - vs2019      # [win]
-
-c_compiler:
-  - clang       # [osx]
 c_compiler_version:
   - 17          # [osx]
 cxx_compiler:
   - clangxx     # [osx]
+  - gxx         # [linux]
 cxx_compiler_version:
   - 17          # [osx]
