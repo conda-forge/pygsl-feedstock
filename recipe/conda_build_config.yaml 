@@ -8,10 +8,10 @@ cxx_compiler:
   - vs2019      # [win]
 
 c_compiler:
-  - clang
+  - clang       # [osx]
 c_compiler_version:
-  - 17
+  - 17          # [osx]
 cxx_compiler:
-  - clangxx
+  - clangxx     # [osx]
 cxx_compiler_version:
-  - 17
+  - 17          # [osx]
