@@ -17,8 +17,7 @@ build:
 requirements:
   build:
     - python
-    - {{ compiler('cxx') }}  [linux]
-    - clangxx <=17  [osx]
+    - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
     - python
