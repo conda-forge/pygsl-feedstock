@@ -25,13 +25,13 @@ requirements:
     - libcblas
     - setuptools
     - wheel
-    - numpy <2.0dev0
+    - numpy >=1.8.2
     - pip
     - gsl
   run:
-    - python
+    - python 
     - gsl
-    - numpy <2.0dev0
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
