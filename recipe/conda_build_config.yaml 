@@ -6,3 +6,12 @@ cxx_compiler:
   - gxx         # [linux]
   - clangxx     # [osx]
   - vs2019      # [win]
+
+c_compiler:
+  - clang
+c_compiler_version:
+  - 17
+cxx_compiler:
+  - clangxx
+cxx_compiler_version:
+  - 17
