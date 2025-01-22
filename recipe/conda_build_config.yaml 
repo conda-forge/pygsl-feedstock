@@ -1,0 +1,6 @@
+cxx_compiler:
+  - gxx  # [linux]
+  - clangxx  # [osx]
+cxx_compiler_version:  # [unix]
+  - 13  # [linux]
+  - 13  # [osx]

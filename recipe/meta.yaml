@@ -11,13 +11,14 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
   skip: true  # [win or py<38]
 
 requirements:
   build:
     - python
-    - {{ compiler('cxx') }}
+    - {{ compiler('cxx') }}  # [linux]
+    - clangxx <=13  # [osx]
     - {{ stdlib("c") }}
   host:
     - python
@@ -25,13 +26,13 @@ requirements:
     - libcblas
     - setuptools
     - wheel
-    - numpy <2.0dev0
+    - numpy >=1.8.2
     - pip
     - gsl
   run:
-    - python
+    - python 
     - gsl
-    - numpy <2.0dev0
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
