@@ -1,5 +1,5 @@
 {% set name = "pygsl" %}
-{% set version = "2.5.1" %}
+{% set version = "2.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/pygsl/pygsl/releases/download/v{{ version }}/pygsl-{{ version }}.tar.gz
-  sha256: a6935cfbdd1ee7d23858ec1a38d33928f643718299e7dca18bb158cdd596eb57
+  sha256: b9d3fcd7267a170f82f8d2565345179fe5b785f94ba060df49d7b264e4db53c2
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 3
+  number: 0
   skip: true  # [win or py<38]
 
 requirements:
@@ -30,7 +30,7 @@ requirements:
     - pip
     - gsl
   run:
-    - python 
+    - python
     - gsl
     - {{ pin_compatible('numpy') }}
 
