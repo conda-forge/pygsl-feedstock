@@ -13,12 +13,17 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
   skip: true  # [win or py<39]
+  run_exports:
+    # This ensures that packages that depend on 'gsl' automatically get
+    # the GSL runtime libraries.
+    - {{ pin_compatible('gsl') }}
 
 requirements:
   build:
     - python
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
+    - pkg-config
   host:
     - python
     - cython
@@ -29,6 +34,7 @@ requirements:
     - numpy >=1.8.2
     - pip
     - gsl
+    - meson-python
   run:
     - python
     - gsl
@@ -39,7 +45,6 @@ test:
     - pygsl
   commands:
     - pip check
-    - python -c "import pygsl; print(pygsl.__version__)"
   requires:
     - pip
 
