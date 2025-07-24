@@ -12,19 +12,19 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  skip: true  # [win or py<38]
+  skip: true  # [win or py<39]
 
 requirements:
   build:
     - python
-    - {{ compiler('cxx') }}  # [linux]
-    - clangxx <=13  # [osx]
+    - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
   host:
     - python
     - cython
     - libcblas
     - setuptools
+    - swig
     - wheel
     - numpy >=1.8.2
     - pip
@@ -39,6 +39,7 @@ test:
     - pygsl
   commands:
     - pip check
+    - python -c "import pygsl; print(pygsl.__version__)"
   requires:
     - pip
 
