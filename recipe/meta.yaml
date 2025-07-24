@@ -1,5 +1,5 @@
 {% set name = "pygsl" %}
-{% set version = "2.5.1" %}
+{% set version = "2.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,30 +7,36 @@ package:
 
 source:
   url: https://github.com/pygsl/pygsl/releases/download/v{{ version }}/pygsl-{{ version }}.tar.gz
-  sha256: a6935cfbdd1ee7d23858ec1a38d33928f643718299e7dca18bb158cdd596eb57
+  sha256: 88082cd00de8dab901ca79f59ab702b2c984232ab11b5ff2426716965168e2c8
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 3
-  skip: true  # [win or py<38]
+  number: 0
+  skip: true  # [win or py<39]
+  run_exports:
+    # This ensures that packages that depend on 'gsl' automatically get
+    # the GSL runtime libraries.
+    - {{ pin_compatible('gsl') }}
 
 requirements:
   build:
     - python
-    - {{ compiler('cxx') }}  # [linux]
-    - clangxx <=13  # [osx]
+    - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
+    - pkg-config
   host:
     - python
     - cython
     - libcblas
     - setuptools
+    - swig
     - wheel
     - numpy >=1.8.2
     - pip
     - gsl
+    - meson-python
   run:
-    - python 
+    - python
     - gsl
     - {{ pin_compatible('numpy') }}
 
