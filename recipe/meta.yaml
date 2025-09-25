@@ -1,5 +1,5 @@
 {% set name = "pygsl" %}
-{% set version = "2.6.2" %}
+{% set version = "2.6.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/pygsl/pygsl/releases/download/v{{ version }}/pygsl-{{ version }}.tar.gz
-  sha256: 88082cd00de8dab901ca79f59ab702b2c984232ab11b5ff2426716965168e2c8
+  sha256: 6576d5eb4b852543d8a58555f90d3df89bc17ba8045c0fe1aaac46d1193dc952
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   skip: true  # [win or py<39]
   run_exports:
     # This ensures that packages that depend on 'gsl' automatically get
