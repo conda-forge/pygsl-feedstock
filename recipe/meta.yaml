@@ -25,7 +25,6 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - swig
-    - gsl
     - make
     - cmake
     - pkg-config
