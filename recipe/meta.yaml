@@ -10,7 +10,10 @@ source:
   sha256: 8422547e0cddda555aee2f81fb821918c90cf3009a2c05ad34178e4377c483b0
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: |
+    meson setup builddir --prefix=$PREFIX
+    meson compile -C builddir
+    meson install -C builddir
   number: 0
   skip: true  # [win or py<39]
   run_exports:
@@ -28,6 +31,9 @@ requirements:
     - make
     - cmake
     - pkg-config
+    - meson
+    - ninja
+    - setuptools
   host:
     - python
     - swig
