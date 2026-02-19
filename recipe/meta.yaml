@@ -17,8 +17,6 @@ build:
   number: 0
   skip: true  # [win or py<39]
   run_exports:
-    # This ensures that packages that depend on 'gsl' automatically get
-    # the GSL runtime libraries.
     - {{ pin_compatible('gsl') }}
 
 requirements:
@@ -34,13 +32,13 @@ requirements:
     - meson
     - ninja
     - setuptools
-    - numpy >=1.8.2,<2.0.0
+    - numpy
   host:
     - python
     - swig
     - pkg-config
     - gsl
-    - numpy >=1.8.2,<2.0.0
+    - numpy
     - pip
     - setuptools
   run:
