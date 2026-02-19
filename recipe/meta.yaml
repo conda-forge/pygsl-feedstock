@@ -34,13 +34,13 @@ requirements:
     - meson
     - ninja
     - setuptools
-    - numpy >=1.8.2
+    - numpy >=1.8.2,<2.0.0
   host:
     - python
     - swig
     - pkg-config
     - gsl
-    - numpy >=1.8.2
+    - numpy >=1.8.2,<2.0.0
     - pip
     - setuptools
   run:
