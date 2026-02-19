@@ -41,6 +41,7 @@ requirements:
     - gsl
     - numpy >=1.8.2
     - pip
+    - setuptools
   run:
     - python
     - gsl
