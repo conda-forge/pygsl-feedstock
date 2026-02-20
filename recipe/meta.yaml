@@ -14,7 +14,7 @@ build:
     meson setup builddir --prefix=$PREFIX
     meson compile -C builddir
     meson install -C builddir
-  number: 0
+  number: 1
   skip: true  # [win or py<39]
 
 requirements:
