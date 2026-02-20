@@ -16,8 +16,9 @@ build:
     meson install -C builddir
   number: 0
   skip: true  # [win or py<39]
-  run_exports:
-    - {{ pin_compatible('gsl') }}
+
+run_exports:
+  - {{ pin_compatible('gsl') }}
 
 requirements:
   build:
@@ -31,18 +32,19 @@ requirements:
     - meson
     - ninja
     - setuptools
-    - numpy
+    - numpy >=1.8.2
   host:
     - python
     - swig
     - pkg-config
     - gsl
-    - numpy
+    - numpy >=1.8.2
     - pip
     - setuptools
   run:
     - python
     - gsl
+    - libopenblas
     - {{ pin_compatible('numpy') }}
 
 test:
