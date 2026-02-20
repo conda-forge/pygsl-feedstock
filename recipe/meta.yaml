@@ -16,8 +16,6 @@ build:
     meson install -C builddir
   number: 0
   skip: true  # [win or py<39]
-  run_exports:
-    - {{ pin_compatible('gsl') }}
 
 requirements:
   build:
