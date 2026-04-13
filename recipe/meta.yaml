@@ -10,17 +10,17 @@ source:
   sha256: 8422547e0cddda555aee2f81fb821918c90cf3009a2c05ad34178e4377c483b0
 
 build:
+  number: 2
+  skip: true  # [py<39]
   script: |
     meson setup builddir --prefix=$PREFIX
     meson compile -C builddir
     meson install -C builddir
-  number: 1
-  skip: true  # [win or py<39]
 
 requirements:
   build:
     - python
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - swig
     - make
