@@ -16,9 +16,7 @@ if not exist "%LIBRARY_INC%\gsl" (
     exit /b 1
 )
 
-meson setup builddir ^
-  --prefix="%PREFIX%" ^
-  --buildtype=release
+meson setup builddir --prefix="%PREFIX%" --buildtype=release
 if errorlevel 1 exit /b 1
 
 meson compile -C builddir -v

@@ -15,7 +15,7 @@ build:
   script: |
     meson setup builddir --prefix=$PREFIX
     meson compile -C builddir
-    meson install -C builddir
+    meson install -C builddir  # [unix]
 
 requirements:
   build:
