@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/pygsl/pygsl/releases/download/v{{ version }}/pygsl-{{ version }}.tar.gz
   sha256: 8422547e0cddda555aee2f81fb821918c90cf3009a2c05ad34178e4377c483b0
+  patches:
+    - patches/0001-fix-msvc-variadic-debug-macro.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [py<39]
   script: |
     meson setup builddir --prefix=$PREFIX # [unix]
