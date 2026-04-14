@@ -6,10 +6,9 @@ cxx_compiler_version:  # [unix]
   - 13   # [osx]
 c_compiler:
   - gcc        # [linux]
-  - clang    # [osx]
+  - clang      # [osx]
   - vs2022     # [win]
 c_compiler_version:
   - 12         # [linux]
   - 16         # [osx]
-  - 19.3       # [win]
 
