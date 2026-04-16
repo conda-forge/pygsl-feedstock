@@ -17,29 +17,13 @@ if exist "%BUILD_PREFIX%\etc\conda\activate.d\vs2022_compiler_vars.bat" (
     exit /b 1
 )
 
-where cl
-where link
-where "%PKG_CONFIG%"
-
-cl /?
-if errorlevel 1 exit /b 1
-
 set "CC=cl"
 set "CXX=cl"
-
-"%PKG_CONFIG%" --modversion gsl
-if errorlevel 1 exit /b 1
-
-"%PKG_CONFIG%" --cflags gsl
-if errorlevel 1 exit /b 1
-
-"%PKG_CONFIG%" --libs gsl
-if errorlevel 1 exit /b 1
 
 meson setup builddir --prefix="%PREFIX%" --buildtype=release
 if errorlevel 1 exit /b 1
 
-meson compile -C builddir -v
+meson compile -C builddir
 if errorlevel 1 exit /b 1
 
 meson install -C builddir

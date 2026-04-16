@@ -11,4 +11,6 @@ c_compiler:
 c_compiler_version:
   - 12         # [linux]
   - 16         # [osx]
+numpy:
+  - 2
 

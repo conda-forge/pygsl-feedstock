@@ -34,20 +34,18 @@ requirements:
     - meson
     - ninja
     - setuptools
-    - numpy >=1.8.2
+    - numpy {{ numpy }}
   host:
     - python
     - swig
     - pkg-config
     - gsl
-    - numpy >=1.8.2
+    - numpy {{ numpy }}
     - pip
     - setuptools
   run:
     - python
     - gsl
-    - libopenblas
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
