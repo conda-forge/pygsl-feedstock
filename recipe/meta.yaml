@@ -10,14 +10,17 @@ source:
   sha256: 8422547e0cddda555aee2f81fb821918c90cf3009a2c05ad34178e4377c483b0
   patches:
     - patches/0001-fix-msvc-variadic-debug-macro.patch
+    - patches/0002-drop-gsl-var-from-swig-interpolation-decls.patch
+    - patches/0003-fix-msvc-pointer-arithmetic-and-uint.patch
+    - patches/0004-fix-msvc-gsl-data-symbol-imports.patch
 
 build:
-  number: 3
+  number: 4
   skip: true  # [py<39]
   script: |
     meson setup builddir --prefix=$PREFIX # [unix]
     meson compile -C builddir # [unix]
-    meson install -C builddir  # [unix]
+    meson install -C builddir # [unix]
 
 requirements:
   build:
@@ -63,3 +66,4 @@ about:
 extra:
   recipe-maintainers:
     - steffengraber
+    - a093130
