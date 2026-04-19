@@ -18,9 +18,9 @@ build:
   number: 4
   skip: true  # [py<39]
   script: |
-    meson setup builddir --prefix=$PREFIX # [unix]
-    meson compile -C builddir # [unix]
-    meson install -C builddir # [unix]
+    meson setup builddir --prefix=$PREFIX  # [unix]
+    meson compile -C builddir  # [unix]
+    meson install -C builddir  # [unix]
 
 requirements:
   build:
