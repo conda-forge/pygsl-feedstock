@@ -46,6 +46,7 @@ requirements:
   run:
     - python
     - gsl
+    - libopenblas  # [unix]
 
 test:
   imports:
