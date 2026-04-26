@@ -1,0 +1,60 @@
+diff --git a/src/callback/gsl_multifit_nlin.i b/src/callback/gsl_multifit_nlin.i
+index 68f61dd..6d2ccab 100644
+--- a/src/callback/gsl_multifit_nlin.i
++++ b/src/callback/gsl_multifit_nlin.i
+@@ -170,7 +170,11 @@ extern const gsl_multifit_fdfsolver_type * gsl_multifit_fdfsolver_lmsder;
+ 	 */
+ #define _PYGSL_GSL_HAS_MULTFIT_FDFSOLVER_LMNIEL
+ #ifdef _PYGSL_GSL_HAS_MULTFIT_FDFSOLVER_LMNIEL
+-extern const gsl_multifit_fdfsolver_type * gsl_multifit_fdfsolver_lmniel;
++#if defined(_MSC_VER) && !defined(SWIG)
++GSL_VAR const gsl_multifit_fdfsolver_type * gsl_multifit_fdfsolver_lmniel;
++#else
++extern const gsl_multifit_fdfsolver_type * gsl_multifit_fdfsolver_lmniel;
++#endif
+ #else
+ const gsl_multifit_fdfsolver_type * gsl_multifit_fdfsolver_lmniel = NULL;
+ #endif
+diff --git a/src/callback/gsl_multimin.i b/src/callback/gsl_multimin.i
+index c30728b..d61ad9f 100644
+--- a/src/callback/gsl_multimin.i
++++ b/src/callback/gsl_multimin.i
+@@ -149,30 +149,28 @@ gsl_multimin_fdfminimizer_type *gsl_multimin_fdfminimizer_vector_bfgs;
+ 	 * config process checked the available minimizers.
+ 	 * If not available define them as NULL
+ 	 */
+-#define _PYGSL_GSL_HAS_MULTIMIN_FDFMINIMIZER_VECTOR_BFGS2
+-#define _PYGSL_GSL_HAS_MULTIMIN_FMINIMIZER_NMSIMPLEX
+-#ifdef _PYGSL_GSL_HAS_MULTIMIN_FDFMINIMIZER_VECTOR_BFGS2
+-extern const
++#ifdef _PYGSL_GSL_HAS_GSL_MULTIMIN_FMINIMIZER_VECTOR_BFGS2
++GSL_VAR const
+ 	       gsl_multimin_fdfminimizer_type *gsl_multimin_fdfminimizer_vector_bfgs2;
+ #else
+ const	  gsl_multimin_fdfminimizer_type *gsl_multimin_fdfminimizer_vector_bfgs2 = NULL;
+ #endif
+-#ifdef _PYGSL_GSL_HAS_MULTIMIN_FMINIMIZER_NMSIMPLEX
+-	  extern const
++#ifdef _PYGSL_GSL_HAS_GSL_MULTIMIN_FMINIMIZER_NMSIMPLEX
++	  GSL_VAR const
+ 	       gsl_multimin_fminimizer_type *gsl_multimin_fminimizer_nmsimplex;
+ #else
+ const	  gsl_multimin_fminimizer_type *gsl_multimin_fminimizer_nmsimplex = NULL;
+ #endif
+-#ifdef _PYGSL_GSL_HAS_MULTIMIN_FMINIMIZER_NMSIMPLEX2
+-	  extern const
++#ifdef _PYGSL_GSL_HAS_GSL_MULTIMIN_FMINIMIZER_NMSIMPLEX2
++	  GSL_VAR const
+ 	       gsl_multimin_fminimizer_type *gsl_multimin_fminimizer_nmsimplex2;
+ #else
+ const	  gsl_multimin_fminimizer_type *gsl_multimin_fminimizer_nmsimplex2 = NULL;
+ #endif
+-#ifdef _PYGSL_GSL_HAS_MULTIMIN_FMINIMIZER_NMSIMPLEX2RAND
+-	  extern const
++#ifdef _PYGSL_GSL_HAS_GSL_MULTIMIN_FMINIMIZER_NMSIMPLEX2RAND
++	  GSL_VAR const
+ 	       gsl_multimin_fminimizer_type *gsl_multimin_fminimizer_nmsimplex2rand;
+ #else
+ const	  gsl_multimin_fminimizer_type *gsl_multimin_fminimizer_nmsimplex2rand = NULL;
+ #endif
+ %}
