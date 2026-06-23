@@ -1,0 +1,23 @@
+diff --git a/src/gslwrap/interpolation.i b/src/gslwrap/interpolation.i
+index c1ef417..00390e1 100644
+--- a/src/gslwrap/interpolation.i
++++ b/src/gslwrap/interpolation.i
+@@ -441,12 +441,12 @@ struct pygsl_spline{
+ 
+ }
+ 
+-GSL_VAR const gsl_interp_type * gsl_interp_linear;
+-GSL_VAR const gsl_interp_type * gsl_interp_polynomial;
+-GSL_VAR const gsl_interp_type * gsl_interp_cspline;
+-GSL_VAR const gsl_interp_type * gsl_interp_cspline_periodic;
+-GSL_VAR const gsl_interp_type * gsl_interp_akima;
+-GSL_VAR const gsl_interp_type * gsl_interp_akima_periodic;
++const gsl_interp_type * gsl_interp_linear;
++const gsl_interp_type * gsl_interp_polynomial;
++const gsl_interp_type * gsl_interp_cspline;
++const gsl_interp_type * gsl_interp_cspline_periodic;
++const gsl_interp_type * gsl_interp_akima;
++const gsl_interp_type * gsl_interp_akima_periodic;
+ 
+ 
+ 

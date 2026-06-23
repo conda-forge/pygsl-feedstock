@@ -1,6 +1,16 @@
 cxx_compiler:
-  - gxx  # [linux]
+  - gxx      # [linux]
   - clangxx  # [osx]
 cxx_compiler_version:  # [unix]
-  - 12  # [linux] 
-  - 13  # [osx]
+  - 12   # [linux] 
+  - 13   # [osx]
+c_compiler:
+  - gcc        # [linux]
+  - clang      # [osx]
+  - vs2022     # [win]
+c_compiler_version:
+  - 12         # [linux]
+  - 16         # [osx]
+numpy:
+  - 2
+

@@ -1,0 +1,30 @@
+diff --git a/src/init/inittestmodule.c b/src/init/inittestmodule.c
+index d59f9bd..aee88c6 100644
+--- a/src/init/inittestmodule.c
++++ b/src/init/inittestmodule.c
+@@ -39,11 +39,8 @@ PyGSL_test_GetPTR1(PyObject *self, PyObject *args)
+ 	for(cnt = 0; cnt < dim; ++cnt){
+ 		ptr1 = PyArray_GETPTR1(a, cnt);
+ 		vtest =
+-#ifdef __cplusplus
+-		  /* in c mode I want to test if it exists */
+ 		  (char *)
+-#endif
+-		  v + stride * cnt;
++		  v + stride * cnt;
+ 		ctest = cptr + stride * cnt;
+ 
+ 		if ((ptr1 == vtest) && (ptr1 == vtest)){
+diff --git a/src/rng/rng_multinomial.ic b/src/rng/rng_multinomial.ic
+index 0b68c5e..e1c4e8a 100644
+--- a/src/rng/rng_multinomial.ic
++++ b/src/rng/rng_multinomial.ic
+@@ -89,7 +89,7 @@ PyGSL_rng_multinomial_pdf_support(PyObject *self, PyObject *args,
+ 
+      array_n = PyGSL_matrix_check(no, -1, k,
+-				  PyGSL_BUILD_ARRAY_INFO(PyGSL_CONTIGUOUS|PyGSL_INPUT_ARRAY, NPY_UINT, sizeof(uint), 2),
++				  PyGSL_BUILD_ARRAY_INFO(PyGSL_CONTIGUOUS|PyGSL_INPUT_ARRAY, NPY_UINT, sizeof(unsigned int), 2),
+ 				  NULL, NULL, NULL);
+      if(array_n == NULL){
+ 	  line = __LINE__ - 2;
+ 	  goto fail;
