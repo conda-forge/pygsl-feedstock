@@ -1,5 +1,5 @@
 {% set name = "pygsl" %}
-{% set version = "2.6.4" %}
+{% set version = "2.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/pygsl/pygsl/releases/download/v{{ version }}/pygsl-{{ version }}.tar.gz
-  sha256: 8422547e0cddda555aee2f81fb821918c90cf3009a2c05ad34178e4377c483b0
+  sha256: 33bc9dc18808ca04f2f67e4f92a4185916728ed876971a3a0b36570672c22e71
 
 build:
   script: |
     meson setup builddir --prefix=$PREFIX
     meson compile -C builddir
     meson install -C builddir
-  number: 1
+  number: 0
   skip: true  # [win or py<39]
 
 requirements:
